@@ -1,5 +1,6 @@
 package lk.ijse.dep11.edupanel.api;
 
+import lk.ijse.dep11.edupanel.to.request.LecturerReqTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +11,7 @@ public class LecturerHttpController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = "multipart/form-data")
-    public void createNewLecturer(){}
+    public void createNewLecturer(@ModelAttribute LecturerReqTO lecturerReqTo){}
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PatchMapping(value = "/{lecturerId}", consumes = "multipart/form-data")
