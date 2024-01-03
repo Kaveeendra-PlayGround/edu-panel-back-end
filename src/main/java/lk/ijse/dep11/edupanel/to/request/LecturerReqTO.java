@@ -2,6 +2,7 @@ package lk.ijse.dep11.edupanel.to.request;
 
 import jdk.jfr.DataAmount;
 import lk.ijse.dep11.edupanel.util.LecturerType;
+import lk.ijse.dep11.edupanel.validation.LecturerImage;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,7 +33,7 @@ public class LecturerReqTO implements Serializable {
     @NotNull(groups = update.class, message = "Display order can't be empty")
     @PositiveOrZero(groups = update.class, message = "Invalid Display order")
     private Integer displayOrder;
-
+    @LecturerImage
     private MultipartFile picture;
     @Pattern(regexp = "^http(s)://.+$" , message = "Invalid linkedin url")
     private String linkedin;

@@ -12,7 +12,9 @@ public class LecturerHttpController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = "multipart/form-data")
-    public void createNewLecturer(@ModelAttribute @Validated(LecturerReqTO.create.class) LecturerReqTO lecturerReqTo){}
+    public void createNewLecturer(@ModelAttribute @Validated(LecturerReqTO.create.class) LecturerReqTO lecturerReqTo){
+        System.out.println(lecturerReqTo);
+    }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PatchMapping(value = "/{lecturerId}", consumes = "multipart/form-data")
